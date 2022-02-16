@@ -18,6 +18,7 @@
 extern unsigned int _tdata_start[];
 extern unsigned int _tdata_end[];
 extern unsigned int _tbss_end[];
+extern unsigned char bootinfo_frame[] __attribute__((weak));
 long sel4_vsyscall(long sysnum, ...);
 
 void camkes_start_control(int thread_id, void *ipc_buffer_ptr)
@@ -63,6 +64,11 @@ void camkes_start_control(int thread_id, void *ipc_buffer_ptr)
             }, {
                 .a_type = AT_SYSINFO,
                 .a_un.a_ptr = &sel4_vsyscall,
+            }, {
+                // NB: optionally filled in by rootserver, if not defined
+                //   a_ptr will be null and dropped by parse_auxv
+                .a_type = AT_SEL4_BOOT_INFO,
+                .a_un.a_ptr = bootinfo_frame,
             }, {
                 .a_type = AT_SEL4_IPC_BUFFER_PTR,
                 .a_un.a_ptr = ipc_buffer_ptr,

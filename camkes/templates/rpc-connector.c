@@ -181,7 +181,7 @@
 
     /*# Ensure the endpoint is allocated #*/
     /*- set ep_obj = alloc_obj('ep', seL4_EndpointObject) -*/
-    /*- set ep = alloc_cap('ep_%s' % me.interface.name, ep_obj, write=True, grantreply=True) -*/
+    /*- set ep = alloc_cap('ep_%s' % me.interface.name, ep_obj, write=True, grant=True, grantreply=True) -*/
 
     /*? allocate_badges(namespace) ?*/
     /*# Badge our capability #*/
@@ -385,7 +385,7 @@
 /*- macro perform_call(namespace, size, length, namespace_prefix='') -*/
     /* Call the endpoint */
     /*-- set info = "%sinfo" % namespace_prefix -*/
-    seL4_MessageInfo_t /*? info ?*/ = seL4_MessageInfo_new(0, 0, 0,
+    seL4_MessageInfo_t /*? info ?*/ = seL4_MessageInfo_new(0, 0, 1,
         /*-- if namespace.userspace_ipc --*/
                 0
         /*-- else --*/
