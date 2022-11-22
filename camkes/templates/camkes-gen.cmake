@@ -295,8 +295,8 @@ RequireFile(CONFIGURE_FILE_SCRIPT configure_file.cmake PATHS ${CMAKE_MODULE_PATH
     /*- if configuration[i.name].get('rump_config') -*/
         CAmkESGen("${generated_dir}/camkes.rumprun.c" component//*? i.name ?*/ component.rumprun.c SOURCE C_STYLE)
     /*- endif -*/
-    /*- if configuration[i.name].get('kataos') -*/
-        CAmkESGen("${generated_dir}/camkes.kataos.c" component//*? i.name ?*/ component.kataos.c SOURCE C_STYLE)
+    /*- if configuration[i.name].get('cantripos') -*/
+        CAmkESGen("${generated_dir}/camkes.cantripos.c" component//*? i.name ?*/ component.cantripos.c SOURCE C_STYLE)
     /*- endif -*/
 
     # Generate camkes.h, which includes all other headers in the correct order.
