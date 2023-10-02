@@ -296,14 +296,6 @@ static_fault_handler_thread!(
     &CAMKES
 );
 /*- else -*/
-/*- if macros.interface_is_irq(t.interface, me) -*/
-static_irq_thread!(
-    /*name=*/ /*? t.interface.name ?*/,
-    /*tcb=*/ SELF_TCB_/*? t.interface.name.upper() ?*/,
-    /*ipc_buffer=*/ core::ptr::addr_of!(/*? macros.ipc_buffer_address(t.ipc_symbol, language='rust') ?*/),
-    &CAMKES
-);
-/*- else -*/
 /*# TODO: passive interface support #*/
 static_interface_thread!(
     /*name=*/ /*? t.interface.name ?*/,
@@ -311,7 +303,6 @@ static_interface_thread!(
     /*ipc_buffer=*/ core::ptr::addr_of!(/*? macros.ipc_buffer_address(t.ipc_symbol, language='rust') ?*/),
     &CAMKES
 );
-/*- endif -*/
 /*- endif -*/
 /*- endfor -*/
 
