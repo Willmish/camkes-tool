@@ -355,3 +355,14 @@ connector cantripRPCOverMultiSharedData {
     from Procedures with 0 threads;
     to Procedure;
 }
+
+/**
+ * cantripRPCSignalOverMultiSharedData connector
+ *
+ * Combination of cantripRPCOverMultiSharedData & cantripRPCCallSignal.
+ */
+connector cantripRPCSignalOverMultiSharedData {
+    from Procedures with 0 threads;
+    to Procedure;
+    attribute bool from_global_endpoint = True;
+}

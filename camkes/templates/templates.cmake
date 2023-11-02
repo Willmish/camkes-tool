@@ -61,6 +61,7 @@ foreach(
     cantripRPCCall
     cantripRPCCallSignal
     cantripRPCOverMultiSharedData
+    cantripRPCSignalOverMultiSharedData
 )
     DeclareCAmkESConnector(
         ${connector}
