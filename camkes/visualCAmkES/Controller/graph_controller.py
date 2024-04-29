@@ -163,8 +163,8 @@ class GraphController(QtWidgets.QMainWindow):
                 # If error occurred
 
                 # For terminal users:
-                print "Error occurred when opening the file... please refer to the following error"
-                print error
+                print("Error occurred when opening the file... please refer to the following error")
+                print(error)
 
                 # Show Error as a message popup
                 messageBox = QtWidgets.QMessageBox()
@@ -229,5 +229,5 @@ class GraphController(QtWidgets.QMainWindow):
         if user_import_paths.count != 0:
             self.__import_paths.extend(user_import_paths)
 
-        print "Import Paths are: " + str(self.__import_paths)
+        print("Import Paths are: " + str(self.__import_paths))
 

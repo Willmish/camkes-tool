@@ -9,8 +9,8 @@
 from PyQt5 import QtWidgets
 
 from Interface.Property import PropertyInterface
-import Connection_Widget
-from Instance_Widget import InstanceWidget
+from . import Connection_Widget
+from .Instance_Widget import InstanceWidget
 
 class ConnectionPropertyWidget(QtWidgets.QGroupBox):
     """

@@ -17,9 +17,9 @@ from camkes.ast import *
 from Model.AST_Model import ASTModel
 from Model import Common
 
-from Connection_Widget import ConnectionWidget, DataportWidget, ProcedureWidget, EventWidget
-from Instance_Widget import InstanceWidget
-from Save_Option_Dialog import SaveOptionDialog
+from .Connection_Widget import ConnectionWidget, DataportWidget, ProcedureWidget, EventWidget
+from .Instance_Widget import InstanceWidget
+from .Save_Option_Dialog import SaveOptionDialog
 from Interface.Property import PropertyInterface
 
 class GraphWidget(QtWidgets.QGraphicsView):
@@ -503,8 +503,8 @@ class GraphWidget(QtWidgets.QGraphicsView):
 
         # Generate / Render graph into 'dot' format
         raw_dot_data = graph_viz.pipe('dot')
-        print "Graphviz rendering... the following is the dot file from graphviz"
-        print raw_dot_data
+        print("Graphviz rendering... the following is the dot file from graphviz")
+        print(raw_dot_data)
 
         # Read dot format (using pydotplus)
         dot_data = pydotplus.graph_from_dot_data(raw_dot_data)

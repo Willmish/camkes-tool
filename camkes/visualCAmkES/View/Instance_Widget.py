@@ -11,10 +11,10 @@ import math
 
 from PyQt5 import QtGui, QtWidgets, QtCore
 
-import Connection_Widget
+from . import Connection_Widget
 from Model import Common
 from Interface.Property import PropertyInterface
-from Instance_Property_Widget import InstancePropertyWidget
+from .Instance_Property_Widget import InstancePropertyWidget
 
 # TODO: Delete itself from all connections when __del__ ed
 
@@ -790,16 +790,16 @@ class InstanceWidget(QtWidgets.QGraphicsWidget, PropertyInterface):
         for connection in self.connection_list:
             string += "%s " % connection.name
 
-        print "%s contains: %s" % (self.name, string)
+        print("%s contains: %s" % (self.name, string))
 
         no_of_connections = len(self.dataport) + len(self.provides) + len(self.consumes) + len(self.uses) + \
                             len(self.emits)
-        print "\tNumber of connections is: %s" % str(no_of_connections)
-        print "\tdataport: %s" % str(len(self.dataport))
-        print "\tprovides: %s" % str(len(self.provides))
-        print "\tconsumes: %s" % str(len(self.consumes))
-        print "\tuses: %s" % str(len(self.uses))
-        print "\temits: %s" % str(len(self.emits))
+        print("\tNumber of connections is: %s" % str(no_of_connections))
+        print("\tdataport: %s" % str(len(self.dataport)))
+        print("\tprovides: %s" % str(len(self.provides)))
+        print("\tconsumes: %s" % str(len(self.consumes)))
+        print("\tuses: %s" % str(len(self.uses)))
+        print("\temits: %s" % str(len(self.emits)))
 
     def mouseMoveEvent(self, mouse_event):
         """

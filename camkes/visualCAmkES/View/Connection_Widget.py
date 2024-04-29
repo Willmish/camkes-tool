@@ -11,8 +11,8 @@ import math, six
 from PyQt5 import QtGui, QtWidgets, QtCore
 
 from Interface.Property import PropertyInterface
-from Instance_Widget import InstanceWidget
-from Connection_Property_Widget import ConnectionPropertyWidget
+from .Instance_Widget import InstanceWidget
+from .Connection_Property_Widget import ConnectionPropertyWidget
 
 class ConnectionWidget(QtWidgets.QGraphicsItem, PropertyInterface):
     """

@@ -22,11 +22,11 @@ def test(argv):
     graph = GraphWidget(None)
     graph.ast = ASTModel.get_ast(os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../../../apps/simple/simple.camkes"))
 
-    print ASTModel.find_instance(graph.ast.assembly.instances, "echo") is not None
+    print(ASTModel.find_instance(graph.ast.assembly.instances, "echo") is not None)
     # find_component is not being tested because it is not used anywhere. However
     # there is no reason why find_component will fail to work, if everything else worked.
 
-    print "visualCAmkES test passed"
+    print("visualCAmkES test passed")
     return 0
 
 if __name__ == '__main__':
